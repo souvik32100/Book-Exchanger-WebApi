@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BookExchangerDBModelStoreContainer" CdmEntityContainer="BookExchangerDBEntities">
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.Book">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="BookAuthor" ColumnName="BookAuthor" />
+          <ScalarProperty Name="BookEdition" ColumnName="BookEdition" />
+          <ScalarProperty Name="UsedMonths" ColumnName="UsedMonths" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeleveryDetails">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.DeleveryDetail">
+        <MappingFragment StoreEntitySet="DeleveryDetails">
+          <ScalarProperty Name="DeleveryId" ColumnName="DeleveryId" />
+          <ScalarProperty Name="SellId" ColumnName="SellId" />
+          <ScalarProperty Name="DeleveryManId" ColumnName="DeleveryManId" />
+          <ScalarProperty Name="BookReceivedDate" ColumnName="BookReceivedDate" />
+          <ScalarProperty Name="BookDeleverdDate" ColumnName="BookDeleverdDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeleveryMen">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.DeleveryMan">
+        <MappingFragment StoreEntitySet="DeleveryMan">
+          <ScalarProperty Name="DeleveryManId" ColumnName="DeleveryManId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.Login">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestedBooks">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.RequestedBook">
+        <MappingFragment StoreEntitySet="RequestedBooks">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="BookAuthor" ColumnName="BookAuthor" />
+          <ScalarProperty Name="BookEdition" ColumnName="BookEdition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellPostings">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.SellPosting">
+        <MappingFragment StoreEntitySet="SellPosting">
+          <ScalarProperty Name="SellId" ColumnName="SellId" />
+          <ScalarProperty Name="BuyerId" ColumnName="BuyerId" />
+          <ScalarProperty Name="SellerId" ColumnName="SellerId" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BookExchangerDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
