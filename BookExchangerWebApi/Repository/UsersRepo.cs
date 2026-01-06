@@ -35,28 +35,21 @@ namespace BookExchangerWebApi.Repository
         {
             var li = context.Logins.Single(x => x.Email == mail && x.Status == 0);
             var us = context.Users.Single(x => x.Email == mail);
-
             context.Logins.Remove(li);
             context.Users.Remove(us);
-
             context.SaveChanges();
         }
 
-        public int TotalUsers()
-        {
+        public int TotalUsers(){
             return context.Users.Count();
         }
-        public User GetUserByEmail(string mail)
-        {
+        public User GetUserByEmail(string mail){
             var us = context.Users.FirstOrDefault(x => x.Email == mail);
             return us;
         }
-
-        public int GetStatus(string mail)
-        {
+        public int GetStatus(string mail){
             Login l;
             l = context.Logins.FirstOrDefault(x=>x.Email==mail);
-
             return l.Status;
         }
 

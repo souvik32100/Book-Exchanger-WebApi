@@ -11,49 +11,37 @@ using System.Web.Http;
 namespace BookExchangerWebApi.Controllers
 {
     [RoutePrefix("api/logins")]
-    
-    public class LoginController : ApiController
-    {
+    public class LoginController : ApiController{
         private readonly IUsersRepo repo;
         IRepository<Login> lrepo = new LoginRepo();
-        public LoginController()
-        {
+        public LoginController(){
             repo = new UsersRepo();
         }
 
         [HttpGet]
         [Route("email/{mail}", Name = "GetLoginId")]
-        public IHttpActionResult GetStatus(string mail)
-        {
+        public IHttpActionResult GetStatus(string mail){
             //string x = mail + "@gmail.com";
-            try
-            {
+            try{
                 int us = repo.GetStatus(mail);
-
                 //return Ok(mail);
                 return Ok(us);
             }
-            catch(Exception)
-            {
+            catch(Exception){
                 return StatusCode(HttpStatusCode.NoContent);
             }
         }
 
-
         [Route("")]
-        public IHttpActionResult Post([FromBody]Login logins)
-        {
-            try
-            {
+        public IHttpActionResult Post([FromBody]Login logins){
+            try{
                 lrepo.Insert(logins);
                 string url = Url.Link("GetLoginId", new { id = logins.Email });
                 return Created(url, logins);
             }
-            catch (Exception e)
-            {
+            catch (Exception e){
                 return Ok(e.Message);
             }
         }
-
     }
 }
