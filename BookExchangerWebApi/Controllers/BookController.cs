@@ -14,33 +14,23 @@ namespace BookExchangerWebApi.Controllers
 {
     [RoutePrefix("api/books")]
     //[BasicAuthentication]
-    public class BookController : ApiController
-    {
+    public class BookController : ApiController{
         private readonly IBookRepo repo;
-
-        public BookController()
-        {
+        public BookController(){
             repo = new BookRepo();
         }
 
         [Route("")]
-        public IHttpActionResult GetAll()
-        {
+        public IHttpActionResult GetAll(){
             var sel = repo.GetAll();
             List<Book> u = new List<Book>();
-            foreach (var b in sel)
-            {
+            foreach (var b in sel){
                 b.Links.Add(new Links() { HRef = "http://localhost:62832/api/books", Method = "GET", Rel = "Get all the user list" });
                 b.Links.Add(new Links() { HRef = "http://localhost:62832/api/books", Method = "POST", Rel = "Create a new user resource" });
                 b.Links.Add(new Links() { HRef = "http://localhost:62832/api/books/" + b.BookId, Method = "PUT", Rel = "Modify an existing user resource" });
                 b.Links.Add(new Links() { HRef = "http://localhost:62832/api/books/" + b.BookId, Method = "DELETE", Rel = "Delete an existing user resource" });
-
                 u.Add(b);
-
             }
-
-
-
             return Ok(u);
         }
 

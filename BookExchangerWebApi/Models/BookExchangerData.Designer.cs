@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\ASUS\Desktop\BookExchangerWebApi\BookExchangerWebApi\Models\BookExchangerData.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\My Projects\New folder (3)\Book-Exchanger-WebApi\BookExchangerWebApi\Models\BookExchangerData.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
